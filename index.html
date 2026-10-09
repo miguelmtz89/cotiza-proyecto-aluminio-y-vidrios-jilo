@@ -506,6 +506,14 @@
                 lead_type: 'whatsapp'
             });
 
+            // Meta Pixel: evento Lead cuando se envía una cotización (sin datos personales)
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_name: 'Cotizacion vidrio y aluminio',
+                    content_category: 'cotizacion_whatsapp'
+                });
+            }
+
             // Abrir WhatsApp
             window.open(urlWhatsApp, '_blank');
 
