@@ -262,6 +262,10 @@
                 grid-template-columns: 1fr;
             }
         }
+        .hint { display: block; font-size: 12px; color: #666; font-weight: 400; margin: 4px 0 6px; }
+        .check-group { display: flex; flex-direction: column; gap: 8px; }
+        .check-item { display: flex; align-items: center; gap: 8px; font-weight: 400; cursor: pointer; }
+        .check-group input[type="checkbox"], .check-group input[type="radio"] { width: 18px; height: 18px; padding: 0; margin: 0; flex: 0 0 auto; }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -325,26 +329,42 @@
                 <div class="section-label">Tu Proyecto (Obligatoria)</div>
 
                 <div class="form-group">
-                    <label for="necesita">4. ¿Qué necesitas? <span class="required">*</span></label>
-                    <select id="necesita" name="necesita" required>
-                        <option value="">Selecciona una opción...</option>
-                        <option value="Puerta">🚪 Puerta</option>
-                        <option value="Ventana">🪟 Ventana</option>
-                        <option value="Cancel de Baño">🛁 Cancel de Baño</option>
-                        <option value="Domo">🏠 Domo</option>
-                        <option value="Barandal">🛂 Barandal</option>
-                        <option value="Fachada">🏢 Fachada</option>
-                        <option value="Otro">📋 Otro</option>
-                    </select>
+                    <label>4. ¿Qué necesitas? <span class="required">*</span></label>
+                    <small class="hint">Puedes marcar varias opciones.</small>
+                    <div class="check-group">
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Puerta"> 🚪 Puerta</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Ventana"> 🪟 Ventana</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Cancel de Baño"> 🛁 Cancel de Baño</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Domo"> 🏠 Domo</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Barandal"> 🛂 Barandal</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Fachada"> 🏢 Fachada</label>
+                        <label class="check-item"><input type="checkbox" name="necesita" value="Otro"> 📋 Otro</label>
+                    </div>
+                    <input type="text" id="necesitaOtro" name="necesitaOtro" placeholder="Si elegiste Otro, especifica aquí" style="margin-top:8px;">
                 </div>
 
                 <div class="form-group">
                     <label for="medidas">5. ¿Cuáles son las medidas de tu proyecto? <span class="required">*</span></label>
+                    <small class="hint">Si son varias piezas, indícalas una por una. Ejemplo: 2 ventanas de 1.20 x 1.50 m.</small>
                     <textarea id="medidas" name="medidas" required placeholder="Ejemplo: Alto: 2m, Ancho: 1.5m, Cantidad: 2 puertas&#10;Proporciona todos los detalles necesarios..."></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="aluminio">6. Tipo de Aluminio Preferido <span class="required">*</span></label>
+                    <label>6. ¿Buscas precio por mayoreo? <span class="required">*</span></label>
+                    <div class="check-group">
+                        <label class="check-item"><input type="radio" name="mayoreo" value="No" required> No, es para un proyecto</label>
+                        <label class="check-item"><input type="radio" name="mayoreo" value="Sí"> Sí, son varios proyectos o cantidades grandes</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudad">7. ¿En qué ciudad o municipio es el proyecto? <span class="required">*</span></label>
+                    <input type="text" id="ciudad" name="ciudad" required placeholder="Ejemplo: Querétaro, Qro.">
+                    <small class="hint">Esto nos ayuda a confirmar que está dentro de nuestra zona de atención (Querétaro, San Juan del Río, San Miguel de Allende o Estado de México).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="aluminio">8. Tipo de Aluminio Preferido <span class="required">*</span></label>
                     <select id="aluminio" name="aluminio" required>
                         <option value="">Selecciona una opción...</option>
                         <option value="Aluminio Nacional">Aluminio Nacional</option>
@@ -358,7 +378,7 @@
                 <div class="section-label">Preferencias (Opcional)</div>
 
                 <div class="form-group">
-                    <label for="cristal">7. ¿Qué tipo de cristal?</label>
+                    <label for="cristal">9. ¿Qué tipo de cristal?</label>
                     <select id="cristal" name="cristal">
                         <option value="">Selecciona una opción...</option>
                         <option value="Cristal Templado">Cristal Templado</option>
@@ -371,7 +391,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tonoAluminio">8. ¿Qué tono de aluminio desea?</label>
+                    <label for="tonoAluminio">10. ¿Qué tono de aluminio desea?</label>
                     <select id="tonoAluminio" name="tonoAluminio">
                         <option value="">Selecciona una opción...</option>
                         <option value="Blanco">⚪ Blanco</option>
@@ -384,7 +404,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="diseno">9. ¿Prefiere un diseño...?</label>
+                    <label for="diseno">11. ¿Prefiere un diseño...?</label>
                     <select id="diseno" name="diseno">
                         <option value="">Selecciona una opción...</option>
                         <option value="Moderno">🎨 Moderno</option>
@@ -394,7 +414,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="horario">10. ¿Cuál es su mejor horario para contactarlo?</label>
+                    <label for="horario">12. ¿Cuál es su mejor horario para contactarlo?</label>
                     <select id="horario" name="horario">
                         <option value="">Selecciona una opción...</option>
                         <option value="Mañana (7am - 12pm)">🌅 Mañana (7am - 12pm)</option>
@@ -432,12 +452,18 @@
             const nombre = document.getElementById('nombre').value.trim();
             const correo = document.getElementById('correo').value.trim();
             const telefono = document.getElementById('telefono').value.trim();
-            const necesita = document.getElementById('necesita').value.trim();
+            const necesitaArr = Array.from(document.querySelectorAll('input[name="necesita"]:checked')).map(function(el) { return el.value; });
+            const necesitaOtro = document.getElementById('necesitaOtro').value.trim();
+            const necesita = necesitaArr.map(function(v) { return (v === 'Otro' && necesitaOtro) ? 'Otro: ' + necesitaOtro : v; }).join(', ');
+            const mayoreoChk = document.querySelector('input[name="mayoreo"]:checked');
+            const mayoreo = mayoreoChk ? mayoreoChk.value : '';
+            const ciudad = document.getElementById('ciudad').value.trim();
+            const esMayoreo = mayoreo === 'Sí';
             const medidas = document.getElementById('medidas').value.trim();
             const aluminio = document.getElementById('aluminio').value.trim();
 
             // Validar campos obligatorios
-            if (!nombre || !correo || !telefono || !necesita || !medidas || !aluminio) {
+            if (!nombre || !correo || !telefono || !necesita || !medidas || !aluminio || !mayoreo || !ciudad) {
                 errorMsg.textContent = '❌ Por favor completa TODOS los campos obligatorios (marcados con *)';
                 errorMsg.classList.add('show');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -460,7 +486,7 @@
             const horario = document.getElementById('horario').value.trim();
 
             // Crear mensaje formateado
-            let textoWhatsApp = `*📋 NUEVA COTIZACIÓN - FORMULARIO WEB*\n\n`;
+            let textoWhatsApp = `*📋 NUEVA COTIZACIÓN - ${esMayoreo ? 'MAYOREO' : 'FORMULARIO WEB'}*\n\n`;
             textoWhatsApp += `*INFORMACIÓN DE CONTACTO*\n`;
             textoWhatsApp += `👤 Nombre: ${nombre}\n`;
             textoWhatsApp += `📧 Email: ${correo}\n`;
@@ -469,7 +495,9 @@
             textoWhatsApp += `*DETALLES DEL PROYECTO (Obligatorio)*\n`;
             textoWhatsApp += `🔧 Necesita: ${necesita}\n`;
             textoWhatsApp += `📐 Medidas:\n${medidas}\n`;
-            textoWhatsApp += `🏭 Aluminio: ${aluminio}\n\n`;
+            textoWhatsApp += `🏭 Aluminio: ${aluminio}\n`;
+            textoWhatsApp += `💼 Tipo de cliente: ${esMayoreo ? 'Mayoreo (varios proyectos)' : 'Proyecto'}\n`;
+            textoWhatsApp += `📍 Ciudad: ${ciudad}\n\n`;
 
             // Agregar campos opcionales si están completos
             if (cristal) {
@@ -503,13 +531,14 @@
             window.dataLayer.push({
                 event: 'whatsapp_lead',
                 form_name: 'cotizacion_vidrio_aluminio',
-                lead_type: 'whatsapp'
+                lead_type: 'whatsapp',
+                customer_type: esMayoreo ? 'mayoreo' : 'proyecto'
             });
 
             // Meta Pixel: evento Lead cuando se envía una cotización (sin datos personales)
             if (typeof fbq === 'function') {
                 fbq('track', 'Lead', {
-                    content_name: 'Cotizacion vidrio y aluminio',
+                    content_name: esMayoreo ? 'mayoreo' : 'particular',
                     content_category: 'cotizacion_whatsapp'
                 });
             }
