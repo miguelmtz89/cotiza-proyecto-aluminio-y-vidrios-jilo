@@ -301,19 +301,15 @@
                 <!-- CAMPOS OBLIGATORIOS -->
                 <div class="section-label">Información de Contacto (Obligatoria)</div>
 
-                <div class="form-row">
+                <div class="form-row full">
                     <div class="form-group">
                         <label for="nombre">1. Nombre Completo <span class="required">*</span></label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
                     </div>
-                    <div class="form-group">
-                        <label for="correo">2. Correo Electrónico <span class="required">*</span></label>
-                        <input type="email" id="correo" name="correo" required placeholder="tu@email.com">
-                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="telefono">3. Teléfono <span class="required">*</span></label>
+                    <label for="telefono">2. Teléfono <span class="required">*</span></label>
                     <input type="tel" id="telefono" name="telefono" required placeholder="Agrega tu numero de 10 digitos">
                 </div>
 
@@ -321,7 +317,7 @@
                 <div class="section-label">Tu Proyecto (Obligatoria)</div>
 
                 <div class="form-group">
-                    <label>4. ¿Qué necesitas? <span class="required">*</span></label>
+                    <label>3. ¿Qué necesitas? <span class="required">*</span></label>
                     <small class="hint">Puedes marcar varias opciones.</small>
                     <div class="check-group">
                         <label class="check-item"><input type="checkbox" name="necesita" value="Puerta"> 🚪 Puerta</label>
@@ -337,13 +333,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="medidas">5. ¿Cuáles son las medidas de tu proyecto? <span class="required">*</span></label>
+                    <label for="medidas">4. ¿Cuáles son las medidas de tu proyecto? <span class="required">*</span></label>
                     <small class="hint">Si son varias piezas, indícalas una por una. Ejemplo: 2 ventanas de 1.20 x 1.50 m.</small>
                     <textarea id="medidas" name="medidas" required placeholder="Ejemplo: Alto: 2m, Ancho: 1.5m, Cantidad: 2 puertas&#10;Proporciona todos los detalles necesarios..."></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>6. ¿Buscas precio por mayoreo? <span class="required">*</span></label>
+                    <label>5. ¿Buscas precio por mayoreo? <span class="required">*</span></label>
                     <div class="check-group">
                         <label class="check-item"><input type="radio" name="mayoreo" value="No" required> No, es para un proyecto</label>
                         <label class="check-item"><input type="radio" name="mayoreo" value="Sí"> Sí, son varios proyectos o cantidades grandes</label>
@@ -351,63 +347,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="ciudad">7. ¿En qué colonia o barrio es el proyecto? <span class="required">*</span></label>
-                    <input type="text" id="ciudad" name="ciudad" required placeholder="Ejemplo: Calle Reforma No. 44 Col. Deni">
+                    <label for="ciudad">6. ¿Cuál es la dirección completa de su proyecto? <span class="required">*</span></label>
+                    <input type="text" id="ciudad" name="ciudad" required placeholder="Ejemplo: Calle Reforma No. 44 Col. Deni Jilotepec">
                     <small class="hint">Esto nos ayuda a confirmar que está dentro de nuestra zona de atención (Querétaro, San Juan del Río, San Miguel de Allende o Estado de México).</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="aluminio">8. Tipo de Aluminio Preferido <span class="required">*</span></label>
-                    <select id="aluminio" name="aluminio" required>
-                        <option value="">Selecciona una opción...</option>
-                        <option value="Aluminio Nacional">Aluminio Nacional</option>
-                        <option value="Aluminio Europeo">Aluminio Europeo</option>
-                        
-                        <option value="Acabado Especial">Acabado Especial</option>
-                    </select>
-                </div>
-
-                <!-- CAMPOS OPCIONALES -->
-                <div class="section-label">Preferencias (Opcional)</div>
-
-                <div class="form-group">
-                    <label for="cristal">9. ¿Qué tipo de cristal?</label>
-                    <select id="cristal" name="cristal">
-                        <option value="">Selecciona una opción...</option>
-                        <option value="Cristal Templado">Cristal Templado</option>
-                        <option value="Cristal Laminado">Cristal Laminado</option>
-                        <option value="Cristal Esmerilado">Cristal Esmerilado</option>
-                        <option value="Cristal Reflectante">Cristal Reflectante</option>
-                        <option value="Cristal Claro">Cristal Claro</option>
-                        <option value="No necesita cristal">No necesita cristal</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="tonoAluminio">10. ¿Qué tono de aluminio desea?</label>
-                    <select id="tonoAluminio" name="tonoAluminio">
-                        <option value="">Selecciona una opción...</option>
-                        <option value="Blanco">⚪ Blanco</option>
-                        <option value="Negro">⚫ Negro</option>
-                        <option value="Natural">🟫 Natural</option>
-                        <option value="Madera">🪵 Madera</option>
-                        <option value="Champagne">🥂 Champagne</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="diseno">11. ¿Prefiere un diseño...?</label>
-                    <select id="diseno" name="diseno">
-                        <option value="">Selecciona una opción...</option>
-                        <option value="Moderno">🎨 Moderno</option>
-                        <option value="Minimalista">⬜ Minimalista</option>
-                        <option value="Clásico">🏛️ Clásico</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="horario">12. ¿Cuál es su mejor horario para contactarlo?</label>
+                    <label for="horario">7. ¿Cuál es su mejor horario para contactarlo?</label>
                     <select id="horario" name="horario">
                         <option value="">Selecciona una opción...</option>
                         <option value="Mañana (7am - 12pm)">🌅 Mañana (7am - 12pm)</option>
@@ -428,7 +374,7 @@
 
         <div class="footer">
             <strong>✓ Mejoramos presupuestos con garantía por escrito</strong>
-            Mantenemos todos los tipos de cristal y acabados disponibles. Te contactaremos en el horario que nos indicaste para confirmar detalles.
+            Mantenemos todos los tipos de cristal y acabados disponibles. Te contactaremos para confirmar los detalles de tu proyecto.
         </div>
     </div>
 
@@ -443,7 +389,6 @@
 
             // Obtener valores de campos obligatorios
             const nombre = document.getElementById('nombre').value.trim();
-            const correo = document.getElementById('correo').value.trim();
             const telefono = document.getElementById('telefono').value.trim();
             const necesitaArr = Array.from(document.querySelectorAll('input[name="necesita"]:checked')).map(function(el) { return el.value; });
             const necesitaOtro = document.getElementById('necesitaOtro').value.trim();
@@ -453,10 +398,10 @@
             const ciudad = document.getElementById('ciudad').value.trim();
             const esMayoreo = mayoreo === 'Sí';
             const medidas = document.getElementById('medidas').value.trim();
-            const aluminio = document.getElementById('aluminio').value.trim();
+            const horario = document.getElementById('horario').value.trim();
 
             // Validar campos obligatorios
-            if (!nombre || !correo || !telefono || !necesita || !medidas || !aluminio || !mayoreo || !ciudad) {
+            if (!nombre || !telefono || !necesita || !medidas || !mayoreo || !ciudad) {
                 errorMsg.textContent = '❌ Por favor completa TODOS los campos obligatorios (marcados con *)';
                 errorMsg.classList.add('show');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -472,46 +417,24 @@
               'currency': 'MXN'
             });
 
-            // Obtener valores de campos opcionales
-            const cristal = document.getElementById('cristal').value.trim();
-            const tonoAluminio = document.getElementById('tonoAluminio').value.trim();
-            const diseno = document.getElementById('diseno').value.trim();
-            const horario = document.getElementById('horario').value.trim();
-
             // Crear mensaje formateado
             let textoWhatsApp = `*📋 NUEVA COTIZACIÓN - ${esMayoreo ? 'MAYOREO' : 'FORMULARIO WEB'}*\n\n`;
             textoWhatsApp += `*INFORMACIÓN DE CONTACTO*\n`;
             textoWhatsApp += `👤 Nombre: ${nombre}\n`;
-            textoWhatsApp += `📧 Email: ${correo}\n`;
             textoWhatsApp += `📱 Teléfono: ${telefono}\n\n`;
 
             textoWhatsApp += `*DETALLES DEL PROYECTO (Obligatorio)*\n`;
             textoWhatsApp += `🔧 Necesita: ${necesita}\n`;
             textoWhatsApp += `📐 Medidas:\n${medidas}\n`;
-            textoWhatsApp += `🏭 Aluminio: ${aluminio}\n`;
             textoWhatsApp += `💼 Tipo de cliente: ${esMayoreo ? 'Mayoreo (varios proyectos)' : 'Proyecto'}\n`;
             textoWhatsApp += `📍 Ciudad: ${ciudad}\n\n`;
-
-            // Agregar campos opcionales si están completos
-            if (cristal) {
-                textoWhatsApp += `*PREFERENCIAS ADICIONALES*\n`;
-            }
-            if (cristal) {
-                textoWhatsApp += `🔷 Cristal: ${cristal}\n`;
-            }
-            if (tonoAluminio) {
-                textoWhatsApp += `🎨 Tono Aluminio: ${tonoAluminio}\n`;
-            }
-            if (diseno) {
-                textoWhatsApp += `✨ Diseño: ${diseno}\n`;
-            }
-            if (horario) {
-                textoWhatsApp += `⏰ Mejor Horario: ${horario}\n`;
-            }
 
             textoWhatsApp += `\n✓ Mejoramos presupuestos con garantía por escrito\n`;
             textoWhatsApp += `✓ Manejamos todos los tipos de cristal y acabados`;
 
+            if (horario) {
+                textoWhatsApp += `\n⏰ Mejor Horario: ${horario}\n`;
+            }
             // Codificar el mensaje para URL
             const mensajeCodificado = encodeURIComponent(textoWhatsApp);
 
@@ -519,7 +442,7 @@
             const urlWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensajeCodificado}`;
 
             // PASO 4: Registrar solicitud de cotización en la capa de datos de GTM.
-            // No enviar nombre, correo, teléfono ni el mensaje a Analytics.
+            // No enviar nombre, teléfono ni el mensaje a Analytics.
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 event: 'whatsapp_lead',
