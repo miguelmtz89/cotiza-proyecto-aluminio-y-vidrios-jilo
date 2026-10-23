@@ -262,31 +262,12 @@
         .container .header { padding: 0; aspect-ratio: 16 / 9; background-size: contain; background-position: center; background-repeat: no-repeat; background-attachment: scroll; }
         .form-title { color: #2c3e50; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.4; text-align: center; margin: 0 0 24px; font-weight: 700; }
 </style>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1929671241750051');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K36SZMXR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Meta Pixel Code -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1929671241750051&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 
 
 
@@ -450,14 +431,6 @@
                 lead_type: 'whatsapp',
                 customer_type: esMayoreo ? 'mayoreo' : 'proyecto'
             });
-
-            // Meta Pixel: evento Lead cuando se envía una cotización (sin datos personales)
-            if (typeof fbq === 'function') {
-                fbq('track', 'Lead', {
-                    content_name: esMayoreo ? 'mayoreo' : 'particular',
-                    content_category: 'cotizacion_whatsapp'
-                });
-            }
 
             // Abrir WhatsApp
             window.open(urlWhatsApp, '_blank');
